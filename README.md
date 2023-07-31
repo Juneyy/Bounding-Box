@@ -47,6 +47,7 @@ Then I loaded the pretrained Resnet-50 and did not include the top layer as we'r
 <div align="center">
     <img alt="churn" src="Images/Transfer-LearningUNet.png">
 </div>
+
 ## 4.0 Building and Training The Model
 
 The encoder (left portion) is the Resnet-50 of each stage in the image below. The decoder is a simple decoding U-Net layer. The output has values 0 (no pneumonia) and 1 (pneumonia). The model is trained on the cross entropy loss function. The code setup and the detail of the training Jupyter Notebook.
