@@ -7,6 +7,11 @@ Segmentation is costly to annotate. Requires someone with a degree of training t
 ## 2.0 Data Exploration 
 The image shows a chest X-ray where the pneumonia is encapsulated. Each image shape is [1, 512, 512, 1]. The first column is the z-axis, the second is the y-axis, the third is the x-axis, and the fourth is the channel. 
 
+<div align="center">
+    <img alt="churn" src="Images/pneumonia.png">
+</div>
+
+
 Checking the label distribution. About half of the cases have pneumonia, and the other half do not
 
 <div align="center">
