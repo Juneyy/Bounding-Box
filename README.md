@@ -1,4 +1,4 @@
-# Transfer-Learning U-Net
+# Transfer-Learning with Resnet-50 onto U-Net
 A project on using Transfer Learning to segment lung pneumonia. 
 
 ## 1.0 Motivation
@@ -23,7 +23,23 @@ The ResNet-50 backbone used for transfer learning in this experiment requires th
 - data input must be 3 channels in depth
 - data input must be scaled between [0, 1]
 
-I preprocessed the data by subsampling by 8 to prevent potential overfitting.
+I preprocessed the data by subsampling by 8 to prevent potential overfitting. To keep the distribution the same, I added the minimum value for each slice to get the range between [0, max+min]. Then dividing the slice by max+min to get the value between [0, 1]. To create two additional channels, I simply tile the slice twice on the channel dimension to get size three. 
+
+Then I loaded the pretrained Resnet-50 and did not include the top layer as we're appending a U-Net onto it. 
+
+## 4.0 Building and Training The Model
+
+The encoder (left portion) is the Resnet-50 of each stage in the image below. The decoder is a simple decoding U-Net layer. The output has values 0 (no pneumonia) and 1 (pneumonia). The model is trained on the cross entropy loss function. The code setup and the detail of the training Jupyter Notebook.
+
+## 5.0 Results
+
+The image quality dropped as we subsampled by 8 to reduce overfitting. The model was not the most accurate, but it has the general idea of where the pneumonia is located
+
+The True Label Result:
+
+The Model Prediction:
+
+
 
 
 
