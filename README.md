@@ -10,7 +10,7 @@ The image shows a chest X-ray where the pneumonia is encapsulated. Each image sh
 Checking the label distribution. About half of the cases have pneumonia, and the other half do not
 
 <div align="center">
-    <img alt="churn" src="Images/labels.png" width="100%" height="300">
+    <img alt="churn" src="Images/labels.png">
 </div>
 
 Exploring the pneumonia pixel size distribution, it is right skewed, where most labels are around 20k pixels. The image total pixel is 512 x 512 = 262144. Most pneumonia cases cover about 7.6% of the overall image size. 
