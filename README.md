@@ -58,7 +58,7 @@ The image quality dropped as we subsampled by 8 to reduce overfitting. The model
 The True Label Result:
 
 <div align="center">
-    <img alt="churn" src="ModelResult.png">
+    <img alt="churn" src="Images/ModelResult.png">
 </div>
 
 The Model Prediction:
