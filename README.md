@@ -15,8 +15,21 @@ Checking the label distribution. About half of the cases have pneumonia, and the
 
 Exploring the pneumonia pixel size distribution, it is right skewed, where most labels are around 20k pixels. The image total pixel is 512 x 512 = 262144. Most pneumonia cases cover about 7.6% of the overall image size. 
 
+<div align="center">
+    <img alt="churn" src="Images/pneumoniasizedistribution.png">
+</div>
+
 Lastly, check the chest image distribution with pneumonia and without pneumonia. 
 
+
+<div align="center">
+    <img alt="churn" src="Images/chestnopneumonia.png">
+</div>
+
+
+<div align="center">
+    <img alt="churn" src="Images/chestpneumonia.png">
+</div>
 
 There is a slight change in the distribution of cases with pneumonia against no pneumonia.
 
@@ -31,6 +44,9 @@ I preprocessed the data by subsampling by 8 to prevent potential overfitting. To
 
 Then I loaded the pretrained Resnet-50 and did not include the top layer as we're appending a U-Net onto it. 
 
+<div align="center">
+    <img alt="churn" src="Images/Transfer-LearningUNet.png">
+</div>
 ## 4.0 Building and Training The Model
 
 The encoder (left portion) is the Resnet-50 of each stage in the image below. The decoder is a simple decoding U-Net layer. The output has values 0 (no pneumonia) and 1 (pneumonia). The model is trained on the cross entropy loss function. The code setup and the detail of the training Jupyter Notebook.
@@ -41,8 +57,15 @@ The image quality dropped as we subsampled by 8 to reduce overfitting. The model
 
 The True Label Result:
 
+<div align="center">
+    <img alt="churn" src="ModelResult.png">
+</div>
+
 The Model Prediction:
 
+<div align="center">
+    <img alt="churn" src="Images/TrueResult.png">
+</div>
 
 
 
